@@ -3,10 +3,16 @@
 
 @{
 
+
+
 	Layout = null;
+
+	var ss = "";
 
 	ViewData["ContactUsModel"] = new CodingAddaSurfaceController.Models.ContactUs();
 }
 <p>hi</p>
+<img src="@(((Umbraco.Cms.Web.Common.PublishedModels.ContactUs)Model).Image.LocalCrops)" alt="description" width="width-value" height="height-value">
+
 
 @await Html.PartialAsync(@"~/views/partials/contactus/contactus.cshtml", ViewData["ContactUsModel"])
