@@ -1,0 +1,29 @@
+﻿@using CodingAddaSurfaceController.Controller
+@model CodingAddaSurfaceController.Models.ContactUs
+<p>ContactUs</p>
+
+@using (Html.BeginUmbracoForm<ContactUsController>("HandleSubmit"))
+{
+    <div>
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name)
+        @Html.ValidationMessageFor(m=>m.Name)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Email)
+        @Html.TextBoxFor(m => m.Email)
+        @Html.ValidationMessageFor(m => m.Email)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Message)
+        @Html.TextBoxFor(m => m.Message)
+        @Html.ValidationMessageFor(m => m.Message)
+    </div>
+    <button type="submit"> Save the data</button>
+}
+@if(TempData["Success"] != null)
+{
+    <div>
+        @TempData["Success"]
+    </div>
+}
